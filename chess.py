@@ -84,12 +84,14 @@ main_board = copy.copy(STARTING_PIECES)
 while True:
     print_chessboard(main_board)
     response = input('> ').split()
-
+# To move a chess piece 
     if response[0] == 'move':
         main_board[response[2]] = main_board[response[1]]
         del main_board[response[1]]
+        # To remove a chess piece 
     elif response[0] == 'remove':
         del main_board[response[1]]
+        # To move a chess piece 
     elif response[0] == 'set':
         main_board[response[1]] = response[2]    
     elif response[0] == 'reset':
@@ -102,3 +104,4 @@ while True:
                 main_board[x + y] = response[1]
     elif response[0] == 'quit':
         sys.exit()             
+        
